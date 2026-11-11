@@ -1,0 +1,24 @@
+{
+  "name": "thefridge",
+  "private": true,
+  "description": "The Fridge demo: customer app, admin dashboard and a simulated vending fridge",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "setup": "npm run db:reset -w @thefridge/web && npm run reset -w @thefridge/fridge-sim",
+    "dev": "concurrently -k -n fridge,web -c green,cyan \"npm:dev:sim\" \"npm:dev:web\"",
+    "dev:sim": "npm run dev -w @thefridge/fridge-sim",
+    "dev:web": "npm run dev -w @thefridge/web",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "test": "npm run test --workspaces --if-present"
+  },
+  "devDependencies": {
+    "concurrently": "^10.0.6",
+    "typescript": "^5.9.0"
+  },
+  "engines": {
+    "node": ">=20.9"
+  }
+}

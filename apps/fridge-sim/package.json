@@ -1,0 +1,29 @@
+{
+  "name": "@thefridge/fridge-sim",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Simulated The Fridge vending machines: machine API, signed webhooks and a touchscreen UI",
+  "scripts": {
+    "dev": "node --watch --import tsx src/index.ts",
+    "start": "tsx src/index.ts",
+    "reset": "tsx src/scripts/reset.ts",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@hono/node-server": "^2.1.6",
+    "@hono/swagger-ui": "^0.6.2",
+    "@hono/zod-openapi": "^1.6.3",
+    "@thefridge/shared": "*",
+    "hono": "^4.13.0",
+    "jsqr": "^1.4.0",
+    "zod": "^4.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "tsx": "^4.20.0",
+    "typescript": "^5.9.0",
+    "vitest": "^3.2.4"
+  }
+}

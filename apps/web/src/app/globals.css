@@ -1,0 +1,85 @@
+@import "tailwindcss";
+
+/* The Fridge brand tokens (from the menu, labels and Instagram posts). */
+@theme {
+  --color-forest: #1f5a34;
+  --color-forest-dark: #143d23;
+  --color-forest-ink: #0f2a18;
+  --color-cream: #f7f1e8;
+  --color-cream-deep: #efe6d6;
+  --color-paper: #fffdf8;
+  --color-tomato: #e2481f;
+  --color-sun: #f6c62f;
+  --color-leaf: #a9c46c;
+  --color-orange: #f26b21;
+  --color-sky: #2d6cb5;
+  --color-ink: #1b2a1f;
+  --color-muted: #5d6b61;
+  --color-line: #e8dfcf;
+
+  --font-sans: var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-anton), "Arial Narrow", sans-serif;
+  --font-brand: var(--font-lilita), ui-rounded, system-ui, sans-serif;
+  --font-hand: var(--font-caveat), cursive;
+
+  --shadow-card: 0 1px 0 rgba(20, 61, 35, 0.06), 0 8px 24px -12px rgba(20, 61, 35, 0.25);
+  --shadow-float: 0 18px 40px -14px rgba(20, 61, 35, 0.45);
+
+  --animate-pop: pop 0.35s cubic-bezier(0.3, 1.5, 0.5, 1);
+  --animate-rise: rise 0.45s ease-out both;
+  @keyframes pop {
+    0% { transform: scale(0.8); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+  }
+  @keyframes rise {
+    0% { transform: translateY(10px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+  }
+}
+
+:root {
+  color-scheme: light;
+}
+
+html,
+body {
+  background: var(--color-cream);
+  color: var(--color-ink);
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Wordmark: chunky letters with a dark outline, like the jar labels. */
+.wordmark {
+  font-family: var(--font-brand);
+  letter-spacing: 0.02em;
+  color: var(--color-forest);
+  -webkit-text-stroke: 1px var(--color-forest-dark);
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Soft doodle backdrop behind the phone column on wide screens. */
+.app-backdrop {
+  background:
+    radial-gradient(circle at 10% 15%, rgba(169, 196, 108, 0.22), transparent 30%),
+    radial-gradient(circle at 90% 10%, rgba(246, 198, 47, 0.18), transparent 28%),
+    radial-gradient(circle at 80% 85%, rgba(226, 72, 31, 0.1), transparent 30%),
+    var(--color-cream-deep);
+}
+
+.leaflet-container {
+  font-family: var(--font-sans);
+  background: #e9efe6;
+}
+.leaflet-popup-content-wrapper {
+  border-radius: 14px;
+}

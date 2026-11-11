@@ -1,0 +1,5 @@
+# Store text files with LF everywhere (hosts run Linux; Windows checkouts stay consistent).
+* text=auto eol=lf
+*.png binary
+*.jpg binary
+*.ico binary

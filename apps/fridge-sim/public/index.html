@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Fridge Simulator · The Fridge</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧊</text></svg>" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&family=Caveat:wght@600;700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Lilita+One&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/vendor/jsqr.js" defer></script>
+    <script src="/app.js" type="module"></script>
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand">
+        <span class="wordmark">THE FRIDGE</span>
+        <span class="brand-sub">Machine simulator</span>
+      </div>
+      <nav id="machineTabs" class="tabs" aria-label="Machines"></nav>
+      <div class="top-links">
+        <span id="cloudStatus" class="pill">connecting…</span>
+        <a href="/docs" target="_blank" rel="noreferrer">API docs</a>
+        <a id="appLink" href="http://localhost:3000" target="_blank" rel="noreferrer">Customer app ↗</a>
+      </div>
+    </header>
+
+    <main class="layout">
+      <section class="machine-col" aria-label="Machine front">
+        <div id="machine"></div>
+      </section>
+      <aside class="side-col">
+        <section class="screen" aria-label="Machine touchscreen">
+          <div class="screen-head">
+            <span class="screen-title">Collect your order</span>
+            <span id="screenTemp" class="screen-temp"></span>
+          </div>
+          <div id="screenState" class="screen-state" aria-live="polite"></div>
+          <form id="scanForm" class="scan-form" autocomplete="off">
+            <input id="codeInput" name="code" placeholder="Pickup code, e.g. TF-7K2Q9P" spellcheck="false" />
+            <button type="submit">Scan</button>
+          </form>
+          <div class="camera">
+            <button id="cameraBtn" type="button" class="ghost">📷 Scan the app's QR with your camera</button>
+            <video id="cameraVideo" playsinline muted hidden></video>
+            <canvas id="cameraCanvas" hidden></canvas>
+          </div>
+        </section>
+        <section id="operator" class="panel"></section>
+        <section id="holds" class="panel"></section>
+        <section id="log" class="panel"></section>
+      </aside>
+    </main>
+
+    <dialog id="buyDialog" class="dialog"></dialog>
+    <div id="toast" class="toast" role="status" hidden></div>
+  </body>
+</html>

@@ -1,0 +1,17 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "fridge-sim",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev", "-w", "@thefridge/fridge-sim"],
+      "port": 4000
+    },
+    {
+      "name": "web",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev", "-w", "@thefridge/web"],
+      "port": 3000
+    }
+  ]
+}

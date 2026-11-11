@@ -1,0 +1,21 @@
+node_modules/
+.next/
+out/
+dist/
+coverage/
+*.tsbuildinfo
+next-env.d.ts
+
+# local env + data (deploy/*.env hold real hosting secrets)
+.env
+.env.local
+deploy/*.env
+apps/web/prisma/*.db
+apps/web/prisma/*.db-journal
+apps/fridge-sim/.data/
+
+# os / editor
+.DS_Store
+Thumbs.db
+.vscode/*
+!.vscode/extensions.json
