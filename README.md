@@ -120,3 +120,4 @@ npm run typecheck
 | Simulated machines | The vending controller implements the same machine API + webhooks |
 | Drawn product images | Real product photography |
 | English only | Arabic + RTL (copy is kept in components; ready to extract) |
+
